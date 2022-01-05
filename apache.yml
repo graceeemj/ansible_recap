@@ -1,0 +1,27 @@
+---
+- hosts: web
+  gather_facts: no
+
+  pre_tasks:
+    - name: update cache
+      apt: update_cache=yes cache_valid_time=3600
+  become: true    
+
+  tasks:
+    - name: install latest version of apache
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+      become: true
+
+    - name: make sure apache is anabled
+      ansible.builtin.service:
+        name: apache2
+        state: started
+      become: true
+
+    - name: copy web file to host
+      copy:
+        src: "{{ web_file }}"
+        dest: "{{ html_destination }}"
+      become: true 
