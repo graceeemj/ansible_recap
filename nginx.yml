@@ -1,0 +1,15 @@
+---
+- hosts: node3
+
+  pre_tasks:
+    - name: update cache
+      apt: update_cache=yes cache_valid_time=7200
+  become: true
+
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt: 
+        name: nginx
+        state: present
+      become: true
+
