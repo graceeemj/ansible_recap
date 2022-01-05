@@ -3,3 +3,4 @@
   copy:
     src: "{{ stage }}_web.html"
     dest: "{{ html_path }}"
+  when: inventory_hostname in groups!=["ftp_server"]
