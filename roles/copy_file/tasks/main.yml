@@ -1,0 +1,5 @@
+---
+- name: copy web file web group 
+  copy:
+    src: "{{ stage }}_web.html"
+    dest: "{{ html_path }}"
