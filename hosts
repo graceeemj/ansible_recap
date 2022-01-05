@@ -13,4 +13,6 @@ node3 ansible_host=192.168.62.7
 [control]
 ansible-1 ansible_host=192.168.62.8
 
+[ftp_server]
+192.168.62.6
 
