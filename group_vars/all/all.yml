@@ -1,0 +1,8 @@
+---
+stage:
+  - hosts: web
+    name: dev
+  - hosts: control
+    name: production
+
+html_path: /var/www/html/index.html

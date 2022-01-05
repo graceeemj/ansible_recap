@@ -1,0 +1,4 @@
+---
+web_file: web.html
+html_destination: /var/www/html/index.html
+stage: dev
