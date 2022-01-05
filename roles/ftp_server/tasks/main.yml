@@ -1,0 +1,13 @@
+---
+- name: Install an ftp server
+  ansible.builtin.apt:
+    name: vsftpd
+    state: present
+  when: inventory_hostname in groups==["ftp_server"]
+
+- name: start the ftp service
+  ansible.builtin.service:
+    name: vsftpd
+    state: started
+    enabled: yes
+  when: inventory_hostname in groups==["ftp_server"]

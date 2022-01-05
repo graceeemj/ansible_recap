@@ -10,4 +10,4 @@
 
   roles:
     - copy_file
-
+    - ftp_server
