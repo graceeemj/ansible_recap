@@ -2,3 +2,5 @@
 web_file: web.html
 html_destination: /var/www/html/index.html
 stage: dev
+apache_conf_path: /etc/apache2/
+

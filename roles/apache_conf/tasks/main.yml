@@ -1,0 +1,8 @@
+---
+- name: copy apache conf on web hosts
+  copy:
+    src: apache2.conf
+    dest: "{{ apache_conf_path }}"
+  become: true
+  notify: 
+    - restart_apache

@@ -1,0 +1,12 @@
+---
+- hosts: web
+  
+  roles: 
+    - apache_conf
+
+  handlers:
+    - name: restart_apache
+      ansible.builtin.service: 
+        name: apache2.service
+        state: restarted
+      become: true
