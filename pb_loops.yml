@@ -1,0 +1,15 @@
+---
+- hosts: node1
+
+  tasks:
+    - name: create users on node1 
+      ansible.builtin.user:
+        name: "{{ item.username }}"
+        groups: "{{ item.groups}}"
+        state: present
+      loop:
+        - { username: 'grace', groups: 'root' } 
+        - { username: 'tefs', groups: 'root' }
+        - { username: 'user3', groups: 'root'}
+      become: true
+
